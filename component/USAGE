@@ -1,0 +1,8 @@
+Description:
+    Creates a new Angular directive set up similar to an Angular 2 component
+
+Example:
+    yo angular:component thing [--coffee]
+
+    This will create:
+        app/scripts/directives/thing.js
