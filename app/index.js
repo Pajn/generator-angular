@@ -42,21 +42,6 @@ var Generator = module.exports = function Generator(args, options) {
 
   this.appPath = this.env.options.appPath;
 
-  if (typeof this.env.options.coffee === 'undefined') {
-    this.option('coffee', {
-      desc: 'Generate CoffeeScript instead of JavaScript'
-    });
-
-    // attempt to detect if user is using CS or not
-    // if cml arg provided, use that; else look for the existence of cs
-    if (!this.options.coffee &&
-      this.expandFiles(path.join(this.appPath, '/scripts/**/*.coffee'), {}).length > 0) {
-      this.options.coffee = true;
-    }
-
-    this.env.options.coffee = this.options.coffee;
-  }
-
   this.hookFor('angular:common', {
     args: args
   });
@@ -70,22 +55,17 @@ var Generator = module.exports = function Generator(args, options) {
   });
 
   this.on('end', function () {
-    var jsExt = this.options.coffee ? 'coffee' : 'js';
+    var jsExt = 'js';
 
     var bowerComments = [
       'bower:js',
       'endbower'
     ];
-    if (this.options.coffee) {
-      bowerComments.push('bower:coffee');
-      bowerComments.push('endbower');
-    }
 
     this.invoke('karma:app', {
       options: {
         'skip-install': this.options['skip-install'],
         'base-path': '../',
-        'coffee': this.options.coffee,
         'travis': true,
         'files-comments': bowerComments.join(','),
         'app-files': 'app/scripts/**/*.' + jsExt,
@@ -303,7 +283,6 @@ Generator.prototype.createIndexHtml = function createIndexHtml() {
 };
 
 Generator.prototype.packageFiles = function packageFiles() {
-  this.coffee = this.env.options.coffee;
   this.template('root/_bower.json', 'bower.json');
   this.template('root/_bowerrc', '.bowerrc');
   this.template('root/_package.json', 'package.json');

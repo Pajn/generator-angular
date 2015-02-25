@@ -1,7 +1,7 @@
 {
-  "name": "generator-angular",
+  "name": "generator-ng",
   "version": "0.11.1",
-  "description": "Yeoman generator for AngularJS",
+  "description": "An opinionated Yeoman generator for AngularJS",
   "keywords": [
     "yeoman-generator",
     "scaffold",
@@ -18,10 +18,8 @@
     "common",
     "component",
     "constant",
-    "controller",
     "decorator",
     "directive",
-    "factory",
     "filter",
     "main",
     "provider",
@@ -33,7 +31,7 @@
     "script-base.js",
     "util.js"
   ],
-  "repository": "yeoman/generator-angular",
+  "repository": "Pajn/generator-angular",
   "scripts": {
     "test": "mocha"
   },

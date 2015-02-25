@@ -1,0 +1,19 @@
+feat: ES6 service; component fixes
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+# Changes to be committed:
+# 	new file:   COMMIT_EDITMSG
+# 	modified:   component/index.js
+# 	modified:   script-base.js
+# 	modified:   service/index.js
+# 	new file:   templates/common/component.html
+# 	new file:   templates/common/component.scss
+# 	deleted:    templates/common/partial.html
+# 	modified:   templates/javascript/component.js
+# 	modified:   templates/javascript/service/service.js
+# 	renamed:    templates/javascript/spec/directive.js -> templates/javascript/spec/component.js
+# 	modified:   templates/javascript/spec/directive.js
+# 	modified:   templates/javascript/spec/service.js
