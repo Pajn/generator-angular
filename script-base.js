@@ -8,8 +8,7 @@ var chalk = require('chalk');
 var Generator = module.exports = function Generator() {
   yeoman.generators.NamedBase.apply(this, arguments);
 
-  this.moduleName = arguments[0][1];
-  console.log(this.moduleName);
+  this.moduleName = arguments[0][1] || '';
 
   var bowerJson = {};
 
@@ -77,6 +76,6 @@ Generator.prototype.generateSourceAndTest = function(appTemplate, testTemplate,
     this.cameledName = this.classedName;
   }
 
-  this.appTemplate(appTemplate, path.join('scripts', targetDirectory, this.name));
-  this.testTemplate(testTemplate, path.join(targetDirectory, this.name));
+  this.appTemplate(appTemplate, path.join(this.moduleName || 'scripts', targetDirectory, this.name));
+  this.testTemplate(testTemplate, path.join(this.moduleName, targetDirectory, this.name));
 };

@@ -11,17 +11,15 @@ var Generator = module.exports = function Generator() {
 util.inherits(Generator, ScriptBase);
 
 Generator.prototype.createComponentFiles = function createComponentFiles() {
-	this.appTemplate('component', path.join('components', this.tagName, this.tagName));
-	this.testTemplate('spec/component', path.join(this.moduleName, 'components',
-		this.tagName));
+	this.appTemplate('component',
+    path.join(this.moduleName, 'components', this.tagName, this.tagName));
 	this.htmlTemplate(
 		'../common/component.html',
-		this.moduleName + '/components/' + this.tagName + '/' + this.tagName +
-		'.html'
+    path.join(this.moduleName, 'components', this.tagName, this.tagName + '.html')
 	);
 	this.htmlTemplate(
 		'../common/component.scss',
-		this.moduleName + '/components/' + this.tagName + '/' + this.tagName +
-		'.scss'
+    path.join(this.moduleName, 'components', this.tagName, this.tagName + '.scss')
 	);
+  this.testTemplate('spec/component', path.join(this.moduleName, 'components', this.tagName));
 };
