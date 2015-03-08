@@ -2,7 +2,10 @@ Description:
     Creates a new Angular directive
 
 Example:
-    yo angular:directive thing [--coffee]
+    yo ng:directive thing [moduleName]
 
     This will create:
         app/scripts/directives/thing.js
+
+    If moduleName is passed this will create:
+        app/moduleName/directives/thing.js

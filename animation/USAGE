@@ -1,0 +1,8 @@
+Description:
+    Creates a new AngularJS javascript driven animation
+
+Example:
+    yo ng:animation thing
+
+    This will create:
+        app/scripts/animations/thing.js

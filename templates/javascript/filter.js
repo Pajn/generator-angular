@@ -1,4 +1,8 @@
+'use strict';
+
+function <%= classedName %>() {
+  return '<%= cameledName %> filter: ' + input;
+}
+
 export default angular.module('<%= cameledName %>', [])
-  .filter('<%= cameledName %>', () => () => {
-    return '<%= cameledName %> filter: ' + input;
-  });
+  .filter('<%= cameledName %>', () => <%= classedName %>);

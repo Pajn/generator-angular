@@ -3,7 +3,10 @@ Description:
     Docs: http://docs.angularjs.org/guide/dev_guide.services.creating_services
 
 Example:
-    yo angular:constant thing [--coffee]
+    yo ng:constant thing [moduleName]
 
     This will create:
         app/scripts/services/thing.js
+
+    If moduleName is passed this will create:
+        app/moduleName/services/thing.js

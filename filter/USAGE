@@ -2,7 +2,10 @@ Description:
     Creates a new AngularJS filter
 
 Example:
-    yo angular:filter thing [--coffee]
+    yo ng:filter thing [moduleName]
 
     This will create:
         app/scripts/filters/thing.js
+
+    If moduleName is passed this will create:
+        app/moduleName/filters/thing.js

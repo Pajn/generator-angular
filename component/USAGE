@@ -2,7 +2,14 @@ Description:
     Creates a new Angular directive set up similar to an Angular 2 component
 
 Example:
-    yo angular:component thing [--coffee]
+    yo yo:component thing [moduleName]
 
     This will create:
-        app/scripts/directives/thing.js
+        app/components/thing/thing.js
+        app/components/thing/thing.html
+        app/components/thing/thing.scss
+
+    If moduleName is passed this will create:
+        app/moduleName/components/thing/thing.js
+        app/moduleName/components/thing/thing.html
+        app/moduleName/components/thing/thing.scss
