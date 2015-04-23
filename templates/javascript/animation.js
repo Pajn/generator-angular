@@ -11,7 +11,7 @@ function enter(element, done) {
 
 function leave(element, done) { }
 
-export default angular.module('<%= cameledName %>', ['ngAnimate'])
+export default angular.module('<%= moduleDot %><%= cameledName %>', ['ngAnimate'])
   .animation('.<%= tagName %>', () => ({
     enter: enter,
     leave: leave,

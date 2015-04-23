@@ -9,6 +9,13 @@ var Generator = module.exports = function Generator() {
   yeoman.generators.NamedBase.apply(this, arguments);
 
   this.moduleName = arguments[0][1] || '';
+  if (this.moduleName != '') {
+    this.modulePath = this.moduleName + '/';
+    this.moduleDot = this.moduleName + '.';
+  } else  {
+    this.modulePath = '';
+    this.moduleDot = '';
+  }
 
   var bowerJson = {};
 
